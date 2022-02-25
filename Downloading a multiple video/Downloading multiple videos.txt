@@ -1,0 +1,27 @@
+# Downloading multiple videos
+
+
+from pytube import YouTube
+
+# link of the video to be downloaded 
+# opening the file 
+video_List = open("Sample.txt","r")
+
+for i in video_List: 
+
+    # object creation using YouTube
+    # which was imported in the beginning 
+
+    yt1 = YouTube(i)
+    try:
+        dw  = yt1.streams.first()
+
+# Where to save 
+
+        dw.download("E:\YouTube Video")
+        print("Downloaded",i)
+
+    except:
+
+        # to handle exception 
+        print("Downloaded Failed for",i)
