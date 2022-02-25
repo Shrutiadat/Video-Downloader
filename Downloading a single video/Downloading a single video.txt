@@ -1,0 +1,18 @@
+# Downloading a single video
+# importing the module
+# pytube library makes the video downloading very easy 
+# Make sure you are connected to the internet to download the videos. Otherwise it will raise an error.
+# pytube is not the native library. You need to install it before using it. Installation is easy when you have pip. In the Terminal or Command Prompt, type the following command to install pytube
+# pip install pytube 
+
+
+
+from pytube import YouTube
+
+# Link of the video to be downloaded
+yt = YouTube("https://youtu.be/8mYeTuzBQr4")
+
+dw = yt.streams.get_by_itag(22)
+
+# Where to save
+dw.download("E:\YouTube Video")
